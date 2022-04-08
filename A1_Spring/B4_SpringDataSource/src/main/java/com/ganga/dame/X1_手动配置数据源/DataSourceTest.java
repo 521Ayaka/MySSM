@@ -1,4 +1,4 @@
-package com.ganga.test;
+package com.ganga.dame.X1_手动配置数据源;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
