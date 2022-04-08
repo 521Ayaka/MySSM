@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/A1_Spring.iml" filepath="$PROJECT_DIR$/A1_Spring/A1_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" filepath="$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" filepath="$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" filepath="$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" filepath="$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" />
       <module fileurl="file://$PROJECT_DIR$/MySSM.iml" filepath="$PROJECT_DIR$/MySSM.iml" />
     </modules>
   </component>

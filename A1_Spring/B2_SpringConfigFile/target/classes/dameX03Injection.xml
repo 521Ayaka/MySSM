@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="x03Dao" class="com.ganga.dao.impl.X03DaoImpl">
+
+        <!--注入List数据-->
+        <property name="stringList">
+            <list>
+                <value>亚索哥哥</value>
+                <value>永恩弟弟</value>
+                <value>卡特妹妹</value>
+            </list>
+        </property>
+        <property name="userList">
+            <list>
+                <ref bean="user1"/>
+                <ref bean="user2"/>
+                <ref bean="user3"/>
+                <bean class="com.ganga.pojo.User">
+                    <constructor-arg name="username" value="盖伦哥哥"/>
+                    <constructor-arg name="age" value="10"/>
+                    <constructor-arg name="adds" value="德玛西亚"/>
+                </bean>
+            </list>
+        </property>
+
+        <!--Map集合注入-->
+        <property name="stringUserMap">
+            <map>
+                <entry key="u1" value-ref="user1"/>
+                <entry key="u2" value-ref="user2"/>
+                <entry key="u3" value-ref="user3"/>
+            </map>
+        </property>
+
+        <!--Properties注入-->
+        <property name="properties">
+            <props>
+                <prop key="p1">亚索哥哥</prop>
+                <prop key="p2">永恩哥哥</prop>
+                <prop key="p3">卡特妹妹</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <!--user对象-->
+    <bean id="user1" class="com.ganga.pojo.User">
+        <constructor-arg name="username" value="亚索哥哥"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="adds" value="艾欧尼亚"/>
+    </bean>
+    <bean id="user2" class="com.ganga.pojo.User">
+        <constructor-arg name="username" value="永恩哥哥"/>
+        <constructor-arg name="age" value="16"/>
+        <constructor-arg name="adds" value="艾欧尼亚"/>
+    </bean>
+    <bean id="user3" class="com.ganga.pojo.User">
+        <constructor-arg name="username" value="卡特妹妹"/>
+        <constructor-arg name="age" value="9"/>
+        <constructor-arg name="adds" value="诺克萨斯"/>
+    </bean>
+
+</beans>

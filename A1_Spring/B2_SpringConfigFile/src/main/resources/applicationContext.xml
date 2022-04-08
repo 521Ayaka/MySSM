@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--00 scope="singleton" -->
+    <!--<bean id="userDao" class="com.ganga.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--01 scope="singleton" -->
+    <!--<bean id="userDao" scope="singleton" class="com.ganga.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--02 scope="prototype" -->
+    <!--<bean id="userDao" scope="prototype" class="com.ganga.dao.impl.UserDaoImpl"></bean>-->
+
+    <!-- 生命周期 -->
+
+    <!--03 绑定初始化方法 和 销毁时的方法 scope="singleton -->
+    <!--<bean id="userDao" scope="singleton" class="com.ganga.dao.impl.UserDaoImpl" init-method="init" destroy-method="destroy"></bean>-->
+
+    <!--04 绑定初始化方法 和 销毁时的方法 scope="prototype" -->
+    <!--<bean id="userDao" scope="prototype" class="com.ganga.dao.impl.UserDaoImpl" init-method="init" destroy-method="destroy"></bean>-->
+
+    <!-- 三种实例化 -->
+
+    <!--05 实例化方式: 无参构造方法实例化 -->
+    <!--<bean id="userDao" class="com.ganga.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--06 实例化方式: 工厂静态方法实例化  -->
+    <!--<bean id="userDao" class="com.ganga.faction.UserFactionStatic" factory-method="getUserDao"></bean>-->
+    <!--
+        id:     id不变,还是唯一标识
+        class:  绑定工厂的全限定名
+        faction-method:
+                绑定该工厂类的静态方法
+
+       加上了 faction-method 之后, 再创建的不是该构成的构造方法,
+       而是再该类的 该方法 通过该方法的返回值获取构造方法创建对象
+    -->
+
+    <!--07 实例化方式: 工厂实例化方法实例化 -->
+    <!--<bean id="faction" class="com.ganga.faction.UserDynamicFaction"></bean>
+    <bean id="userDao" factory-bean="faction" factory-method="getUserDao"></bean>-->
+    <!--
+        [重要]: faction-method=“静态方法”
+
+        先bean这个工厂 id class
+
+        再bean
+            id:     以后通过此id获取实例化对象
+            faction-bean:   绑定之前创建的工厂
+            faction-method: 再绑定该工厂的实例化方法
+
+    -->
+
+
+    <!-- 依赖注入 -->
+
+    <!--001 -->
+    <!--<bean id="userDao" class="com.ganga.dao.impl.UserDaoImpl"></bean>
+    <bean id="userServlet" class="com.ganga.service.impl.UserServiceImpl"></bean>-->
+
+
+</beans>

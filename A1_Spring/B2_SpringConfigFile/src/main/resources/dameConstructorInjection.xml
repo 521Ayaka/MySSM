@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="constructorDao" class="com.ganga.dao.impl.ConstructorDaoImpl"></bean>
+
+    <bean id="constructorService" class="com.ganga.service.impl.ConstructorServiceImpl">
+        <constructor-arg name="constructorDao" ref="constructorDao"></constructor-arg>
+    </bean>
+    <!--
+        在setService中添加依赖关系 将setDao注入到setService
+            构造方法注入
+
+        添加标签 constructor-arg
+                    name: 指定的构造器参数名称
+                    ref:  引用容器当中bean id名
+
+    -->
+
+</beans>

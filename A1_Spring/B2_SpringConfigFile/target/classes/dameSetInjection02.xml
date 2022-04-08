@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        第一步: 在命名空间中导入p标签
+                 xmlns:p="http://www.springframework.org/schema/p"
+    -->
+
+
+    <bean id="setDao" class="com.ganga.dao.impl.SetDaoImpl"></bean>
+
+    <bean id="setService" class="com.ganga.service.impl.SetServiceImpl" p:setDao-ref="setDao"></bean>
+    <!--
+        第二步: 在setService中 设置 p:setDao-ref="setDao"
+
+                p:后面加 对应的set方法 如:property 的 name属性
+                -ref 是指set方式注入对象  [不带ref是注入的属性]
+                ="注入对象的bean 的id" 如property 的 ref属性
+    -->
+
+</beans>

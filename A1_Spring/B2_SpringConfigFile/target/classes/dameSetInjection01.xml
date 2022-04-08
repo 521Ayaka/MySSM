@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="setDao" class="com.ganga.dao.impl.SetDaoImpl"></bean>
+    <bean id="setService" class="com.ganga.service.impl.SetServiceImpl">
+        <property name="setDao" ref="setDao"/>
+    </bean>
+    <!--
+        在setService中添加依赖关系 将setDao注入到setService
+            set方法注入
+
+        添加标签 property
+                name: 该class(com.ganga.service.impl.SetServiceImpl)
+                        的用于获取对象的 set...方法
+                        setSetDao(SetDao setDao)方法 去掉set
+                        并将第一个字母变为小写
+                      即: ref="setDao"
+
+                ref:  注入对象的bean id标识
+                      即: name="setDao"
+
+    -->
+
+</beans>
