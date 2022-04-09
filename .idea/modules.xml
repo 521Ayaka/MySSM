@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" filepath="$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" filepath="$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" filepath="$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" filepath="$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/MySSM.iml" filepath="$PROJECT_DIR$/MySSM.iml" />
     </modules>
   </component>
