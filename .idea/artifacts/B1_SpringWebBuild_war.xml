@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="B1_SpringWebBuild:war">
+    <output-path>$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>B1_SpringWebBuild</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="B1_SpringWebBuild-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="B1_SpringWebBuild:war exploded" />
+    </root>
+  </artifact>
+</component>

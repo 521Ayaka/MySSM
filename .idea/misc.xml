@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild" />
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -9,6 +13,10 @@
         <option value="$PROJECT_DIR$/A1_Spring/B3_SpringAPI/pom.xml" />
         <option value="$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/pom.xml" />
         <option value="$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/pom.xml" />
+        <option value="$PROJECT_DIR$/A1_Spring/B6_SpringJunit/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B1_ SpringWebBuild/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener/pom.xml" />
       </list>
     </option>
   </component>

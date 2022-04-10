@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+
+    <!-- 监听初始化创建Spring容器 -->
+    <listener>
+        <listener-class>com.ganga.listener.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!-- 配置文件数据 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- 导入Spring-web工具 的监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--
+        [注意]:
+                ContextLoaderListener要指定文件位置
+
+                名字就是：contextConfigLocation
+                值是文件位置 classpath: + 文件名
+
+        <context-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:applicationContext.xml</param-value>
+        </context-param>
+
+    -->
+
+    <servlet>
+        <servlet-name>UserServletDame01</servlet-name>
+        <servlet-class>com.ganga.web.request.UserServletDame01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServletDame01</servlet-name>
+        <url-pattern>/userServletDame01</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
