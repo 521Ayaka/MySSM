@@ -9,6 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/B2_SpringWebContextLoaderListener/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="web" name="Web2">
@@ -19,6 +20,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/B2_SpringWebContextLoaderListener/target/B1_SpringWebBuild-1.0-SNAPSHOT" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>

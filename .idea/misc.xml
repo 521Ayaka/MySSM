@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild" />
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener" />
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart" />
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -17,6 +19,8 @@
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B1_ SpringWebBuild/pom.xml" />
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/pom.xml" />
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/pom.xml" />
       </list>
     </option>
   </component>
