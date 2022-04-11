@@ -31,6 +31,7 @@ public class UserControllerDame04 {
     * */
 
 
+
     //params = {"user!100"} user参数不能说100
     @RequestMapping(value = "/dame04-2",params = {"user!100"},method = RequestMethod.GET)
     public String method2(){
