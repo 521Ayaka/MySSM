@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation=
                "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
                ">
 
     <!-- 扫描主键 -->
@@ -18,5 +20,37 @@
         expression 包含该类型的文件类路径
     -->
 
+
+    <!-- 配置视图解析器 ViewResolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 配置前缀 -->
+        <property name="prefix" value="/jsp/"/>
+        <!-- 配置后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--拼接字符路径
+         /jsp/xxx.jsp
+         /jsp/xxx/xxx.jsp
+    -->
+
+    <!--配置处理器适配器 配置json工具-->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>-->
+
+
+    <!-- 上面比较繁琐 -->
+    <!-- 直接 -->
+    <!-- mvc的注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!--
+        以后每次创建mvc的配置文件spring-mvc.xml时
+            都先加上这句话
+    -->
 
 </beans>
