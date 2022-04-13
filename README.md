@@ -12,7 +12,7 @@
 
 ---
 
-![image-20220413082758419](D:\MySSM\img\md-img\image-20220413082758419.png)
+![image-20220413082758419](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413082758419.png)
 
 ---
 
@@ -22,9 +22,9 @@
 
 ---
 
-![image-20220413082944652](D:\MySSM\img\md-img\image-20220413082944652.png)
+![image-20220413082944652](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413082944652.png)
 
-![image-20220413083028235](D:\MySSM\img\md-img\image-20220413083028235.png)
+![image-20220413083028235](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413083028235.png)
 
 ---
 
@@ -34,7 +34,7 @@
 
 ---
 
-![image-20220413083135688](D:\MySSM\img\md-img\image-20220413083135688.png)
+![image-20220413083135688](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413083135688.png)
 
 ---
 
@@ -44,7 +44,7 @@
 
 ### Spring开发步骤
 
-![image-20220413083256330](D:\MySSM\img\md-img\image-20220413083256330.png)
+![image-20220413083256330](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413083256330.png)
 
 
 
@@ -156,7 +156,7 @@ public void test1(){
 
 ##### Bean标签基本配置
 
-![image-20220413084939770](D:\MySSM\img\md-img\image-20220413084939770.png)
+![image-20220413084939770](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413084939770.png)
 
 ---
 
@@ -164,7 +164,7 @@ public void test1(){
 
 ##### **Scope范围配置**
 
-![image-20220413085143163](D:\MySSM\img\md-img\image-20220413085143163.png)
+![image-20220413085143163](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413085143163.png)
 
 1. 当scope的取值为**`singleton`**时
     1. Bean的实例化个数：**1个 **
@@ -266,9 +266,9 @@ public class DynamicFactoryBean {
 
 ###### 注入方式
 
-![image-20220413091857306](D:\MySSM\img\md-img\image-20220413091857306.png)
+![image-20220413091857306](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413091857306.png)
 
-![image-20220413091917185](D:\MySSM\img\md-img\image-20220413091917185.png)
+![image-20220413091917185](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413091917185.png)
 
 
 
@@ -290,7 +290,7 @@ public class DynamicFactoryBean {
 
 
 
-![image-20220413092516763](D:\MySSM\img\md-img\image-20220413092516763.png)
+![image-20220413092516763](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413092516763.png)
 
 
 
@@ -606,7 +606,7 @@ applicationContext.xml
 
 
 
-![ApplicationContext继承体系](D:\MySSM\img\md-img\ApplicationContext继承体系.png)
+![ApplicationContext继承体系](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/ApplicationContext继承体系.png)
 
 
 
@@ -760,7 +760,7 @@ Spring是轻代码而重配置的框架，配置比较繁重，影响开发效�
 
 <font color="red">**Spring原始注解主要是替代的配置**</font>
 
-![原注解](D:\MySSM\img\md-img\原注解.png)
+![原注解](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/原注解.png)
 
 
 
@@ -853,7 +853,7 @@ public void destroy(){
 
 <font color="red">**引入Spring新注解**</font>
 
-![新注解](D:\MySSM\img\md-img\新注解.png)
+![新注解](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/新注解.png)
 
 要想使用注解开发 **首先有一个核心配置类**
 
@@ -1067,11 +1067,11 @@ public class SpringJunitRunTest {
 
 **ApplicationContext应用上下文获取方式**
 
-![image-20220413175942469](D:\MySSM\img\md-img\image-20220413175942469.png)
+![image-20220413175942469](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413175942469.png)
 
 **Spring提供了获取应用上下文的工具**
 
-![image-20220413180046845](D:\MySSM\img\md-img\image-20220413180046845.png)
+![image-20220413180046845](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413180046845.png)
 
 
 
@@ -1305,7 +1305,7 @@ public class UserController {
 
 
 
-![image-20220413173457520](D:\MySSM\img\md-img\image-20220413173457520.png)
+![image-20220413173457520](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413173457520.png)
 
 
 
@@ -1315,7 +1315,7 @@ public class UserController {
 
 #### **SpringMVC的执行流程**
 
-![image-20220413173712264](D:\MySSM\img\md-img\image-20220413173712264.png)
+![image-20220413173712264](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413173712264.png)
 
 
 
@@ -1379,7 +1379,7 @@ public class UserController {
 
 ##### <font color="red">**@RequestMapping**</font>
 
-![image-20220413174802168](D:\MySSM\img\md-img\image-20220413174802168.png)
+![image-20220413174802168](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413174802168.png)
 
 ```java
 @Controller
@@ -1502,11 +1502,11 @@ public class UserControllerDame04 {
 
 ##### <font color="red">**组件扫描**</font>
 
-![image-20220413175146615](D:\MySSM\img\md-img\image-20220413175146615.png)
+![image-20220413175146615](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413175146615.png)
 
-![组件扫描01](D:\MySSM\img\md-img\组件扫描01.png)
+![组件扫描01](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/组件扫描01.png)
 
-![组件扫描02](D:\MySSM\img\md-img\组件扫描02.png)
+![组件扫描02](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/组件扫描02.png)
 
 
 
@@ -1571,7 +1571,7 @@ public class UserControllerDame04 {
 
 #### SpringMVC的数据响应方式
 
-![image-20220413182340971](D:\MySSM\img\md-img\image-20220413182340971.png)
+![image-20220413182340971](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413182340971.png)
 
 
 
@@ -1964,7 +1964,7 @@ public class WriterBackAttributeObjAndList {
 
 #### 获取的数据类型
 
-![image-20220413185144429](D:\MySSM\img\md-img\image-20220413185144429.png)
+![image-20220413185144429](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413185144429.png)
 
 #### 基本数据类型
 
