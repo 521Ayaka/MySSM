@@ -43,7 +43,7 @@ public class ReturnStringSkip {
     *          redirect: 重定向
     * */
     //
-    @RequestMapping("dame05-2")
+    @RequestMapping("/dame05-2")
     public String method02(){
         System.out.println("run dame05 method02");
         return "redirect:http://localhost:8080/B5_SpringMVC_war/jsp/dame05.jsp";

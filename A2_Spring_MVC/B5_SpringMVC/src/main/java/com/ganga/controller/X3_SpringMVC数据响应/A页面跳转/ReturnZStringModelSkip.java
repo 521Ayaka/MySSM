@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *   进行拆分
  * */
 @Controller
-@RequestMapping("web/x3")
+@RequestMapping("/web/x3")
 public class ReturnZStringModelSkip {
 
     @RequestMapping("/dame06-m")
