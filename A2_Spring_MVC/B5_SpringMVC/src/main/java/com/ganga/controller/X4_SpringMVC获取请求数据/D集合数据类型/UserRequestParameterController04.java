@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/web/x4")
 public class UserRequestParameterController04 {
 
+
     @RequestMapping("/user04")
     @ResponseBody
     public String user04(VO vo){
