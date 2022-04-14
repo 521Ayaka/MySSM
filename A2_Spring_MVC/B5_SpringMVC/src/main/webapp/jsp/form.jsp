@@ -70,57 +70,41 @@
 <br>
 <h2 align="center">集合类型参数 表单 02</h2>
 <div align="center" id="app">
-    <form action="${pageContext.request.contextPath}/web/x4/user04" method="">
-        <h3>第一个对象</h3>
-        <input type="text" name="userList[0].username"><br>
-        <input type="text" name="userList[0].age"><br>
-        <h3>第二个对象</h3>
-        <input type="text" name="userList[1].username"><br>
-        <input type="text" name="userList[1].age"><br>
-        <h3>第三个对象</h3>
-        <input type="text" name="userList[2].username" value=""><br>
-        <input type="text" name="userList[2].age"><br>
+    <input type="button" value="XXXXX" id="butt">
+</div>
+
+
+<br><br>
+<h2 align="center">解决中文乱码问题</h2>
+<div align="center">
+    <form action="${pageContext.request.contextPath}/web/x4/setEncoding" method="post">
+        <h3>参数名有中文</h3>
+        <input type="text" name="username"><br>
+        <input type="text" name="age"><br>
         <input type="submit" value=提交按钮>
     </form>
 </div>
 
-<script src="/js/axios-0.18.0.js"></script>
-<script src="/js/vue.js"></script>
 
+
+<%-- 阿贾克斯 请求 --%>
+<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
 <script>
+    var userList = new Array();
+    userList.push({username:"zhangsan",age:18});
+    userList.push({username:"lisi",age:28});
 
-    //TODO:
-    /*var json1 = {username:"ganga",age:18};
-    var json2 = {username:"gangale",age:18};
-    var json3 = {username:"gangaddd",age:18};
-    var userList()
+    document.getElementById("butt").onclick = function (){
+        $.ajax({
+            type:"POST",
+            url:"${pageContext.request.contextPath}/web/x4/dame05",
+            data:JSON.stringify(userList),
+            contentType:"application/json;charset=utf-8"
+        })
+    }
 
-    axios({
-        method:"POST",
-        url:"${pageContext.request.contextPath}/web/x4/user04",
-        data:JSON.stringify(userList),
-    }).then(function (resp){
 
-    })*/
-
-    /*new Vue({
-        el:"#app",
-        data(){
-            return{
-
-            }
-        },
-        mounted(){
-            axios({
-                method:"GET",
-                url:"${pageContext.request.contextPath}/web/x4/user04",
-                data:JSON.stringify(userList),
-                context:"application/json;charset=utf-8"
-            }).then(function (resp){
-
-            })
-        }
-    })*/
+</script>
 
 </script>
 

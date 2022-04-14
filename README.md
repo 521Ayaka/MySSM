@@ -1966,7 +1966,7 @@ public class WriterBackAttributeObjAndList {
 
 ![image-20220413185144429](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220413185144429.png)
 
-#### 基本数据类型
+##### 1. 基本数据类型
 
 Controller中的业务方法的参数名称要与请求参数的name一致，参数值会自动映射匹配。
 
@@ -2008,7 +2008,7 @@ public class UserRequestParameterController01 {
 
 
 
-#### 获取POJO类型参数
+##### 2. 获取POJO类型参数
 
 Controller中的业务方法的POJO参数的属性名与请求参数的name一致，参数值会自动映射匹配。
 
@@ -2049,7 +2049,7 @@ public class UserRequestParameterController02 {
 
 
 
-#### 获取数组数据类型
+##### 3. 获取数组数据类型
 
 Controller中的业务方法数组名称与请求参数的name一致，参数值会自动映射匹配。
 
@@ -2091,7 +2091,7 @@ public class UserRequestParameterController03 {
 
 
 
-#### 获取集合数据类型
+##### 4.获取集合数据类型
 
 ```java
 package com.ganga.controller.X4_SpringMVC获取请求数据.D集合数据类型;
@@ -2146,10 +2146,641 @@ public class UserRequestParameterController04 {
 
 
 
+#### 资源拦截问题
+
+解决方案
+
+![资源拦截](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/资源拦截.png)
+
+####  参数绑定注解
+
+<font color="red">**@requestParam**</font>
+
+![image-20220414205351261](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220414205351261.png)
+
+代码演示:
+
+```java
+package com.ganga.controller.X4_SpringMVC获取请求数据.F注解RequestParam;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @RequestParam 注解演示
+ */
+
+@Controller
+@RequestMapping("/web/x4")
+public class TestRequestParamAnnotation {
+
+    @RequestMapping("/param00")
+    @ResponseBody
+    public String param00(String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param00?username=ganga  请求到参数: ganga
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param00?user=gangale    请求到参数: null
+        System.out.println(username);
+        if (username == null){
+            return "null";
+        }
+        return username;
+    }
+    /*
+    * 当请求的参数是username可以接收
+    *
+    * 如果请求的参数是user是 接收失败
+    *
+    * */
+
+    /*
+     * RequestParam有三个参数:
+     *
+     *   value: 与请求参数相同,映射成方法参数名
+     *   required: 此在指定的请求参数是否必须包含, 默认是true, 提交时没有该参数就会报错
+     *   defaultValue: 当没有指定这个请求参数时, 则会使用指定的默认值
+     *
+     * */
+
+    //使用@RequestParam注解进行映射
+    @RequestMapping("/param01")
+    @ResponseBody
+    public String param01(@RequestParam("name") String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param01?username=ganga      请求失败
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param01?name=gangajiang     请求到参数: gangajiang
+        System.out.println(username);
+        return username;
+    }
+
+    @RequestMapping("/param02-1")
+    @ResponseBody
+    public String param02_1(@RequestParam(value = "name",required = true) String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param02-1?name=ganga    请求成功
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param02-1               请求失败
+        System.out.println(username);
+        return username;
+    }
+    @RequestMapping("/param02-2")
+    @ResponseBody
+    public String param02_2(@RequestParam(value = "name",required = false) String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param02-2?name=ganga    请求成功
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param02-2               请求成功
+        System.out.println(username);
+        return username;
+    }
+
+    @RequestMapping("/param03")
+    @ResponseBody
+    public String param03(@RequestParam(value = "name",defaultValue = "default") String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param03?name=ganga   请求到参数: ganga
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/param03              请求到参数: default
+        System.out.println(username);
+        return username;
+    }
+
+}
+```
+
+
+
+---
 
 
 
 
+
+#### 获取restful参数风格
+
+
+
+![image-20220414205741868](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220414205741868.png)
+
+![image-20220414205845074](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220414205845074.png)
+
+
+
+**代码演示:**
+
+```java
+package com.ganga.controller.X4_SpringMVC获取请求数据.G获取Restful风格参数;
+
+/*
+*
+* Restful是一种软件架构风格、设计风格，而不是标准，
+* 只是提供了一组设计原则和约束条件。
+* 主要用于客户端和服务器交互类的软件，
+* 基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存机制等。
+*
+*
+* GET:      用于获取资源
+* POST:     用于新建资源
+* PUT:      用于更新资源
+* DELETE:   用于删除资源
+* */
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping("/web/x4")
+public class TestPathVariable {
+
+    @RequestMapping("/restful/{user}")
+    @ResponseBody
+    public String pathVariable(@PathVariable(value = "user",required = false) String username){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/restful/gangajiang
+        System.out.println(username);
+        return username;
+    }
+
+    //restful风格参数   post: 用于新建资源   可以在映射服务时  添加指定方式 method=RequestMethod.POST
+    @RequestMapping(value = "/userAdd/{user}",method = RequestMethod.POST)
+    @ResponseBody
+    public String pathVariablePost(@PathVariable("user") String username){
+        System.out.println(username);
+        return username;
+    }
+
+}
+
+```
+
+---
+
+
+
+
+
+
+
+#### 自定义转换器
+
+
+
+- SpringMVC 默认已经提供了一些常用的类型转换器，例如客户端提交的字符串转换成int型进行参数设置。
+- 但是不是所有的数据类型都提供了转换器，没有提供的就需要自定义转换器，例如：日期类型的数据就需要自 定义转换器。
+
+**开发步骤：**
+
+<font color="red">**① 定义转换器类实现Converter接口 **</font>
+
+<font color="red">**② 在配置文件中声明转换器**</font>
+
+<font color="red">**③ 在中引用转换器**</font>
+
+
+
+
+
+<font color="red">**① 定义转换器类实现Converter接口 **</font>
+
+```java
+package com.ganga.converter;
+
+import org.springframework.core.convert.converter.Converter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+/**
+ * 自定义 日期时间转换器
+ *
+ * 实现Converter
+ *      泛型有两个
+ *      <e1,e2>
+ *          e1是接收的参数类型
+ *          e2是要转换的类型
+ *
+ *  重写converter方法
+ *
+ */
+public class DataConverter implements Converter<String, Date> {
+    @Override
+    public Date convert(String source) {
+
+        SimpleDateFormat simple = new SimpleDateFormat("yyyy-MM-dd:HH-mm-ss");
+        Date date = null;
+        try {
+            date = simple.parse(source);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return date;
+    }
+}
+
+```
+
+
+
+<font color="red">**② 在配置文件中声明转换器**</font>
+
+`spring-mvc.xml`
+
+```xml
+
+<!-- 声明自定义转换器 -->
+<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+    <property name="converters">
+        <list>
+            <!-- 注入自定义时间日期转换类 -->
+            <bean class="com.ganga.converter.DataConverter"></bean>
+       </list>
+    </property>
+</bean>
+<!-- [注意！！！]
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    在mvc 注解驱动上 配置转换器
+-->
+<mvc:annotation-driven conversion-service="conversionService"/>
+
+```
+
+
+
+<font color="red">**③ 在中引用转换器**</font>
+
+```java
+package com.ganga.controller.X4_SpringMVC获取请求数据.H自定义转换器;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Date;
+
+@Controller
+@RequestMapping("/web/x4/")
+public class ConverterConversionServiceFactionBean {
+
+    @RequestMapping("/converter")
+    @ResponseBody
+    public String converterTest(@RequestParam("date") Date date){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/converter?date=2060/11/11
+        System.out.println(date);
+        String dateStr = date.toString();
+        return dateStr;
+    }
+
+}
+```
+
+---
+
+
+
+#### 获取Servlet相关API
+
+SpringMVC支持使用原始ServletAPI对象作为控制器方法的参数进行注入，常用的对象如下：
+
+**方法参数类型是Servlet相关API SpringMVC回自动注入**
+
+    - **HttpServletResponse**
+- **HttpServletResponse**
+- **HttpSession**
+
+```java
+@Controller
+@RequestMapping("/web/x4")
+public class SpringMvcGetServletAPI {
+
+    //http://localhost:8080/B5_SpringMVC_war/web/x4/getAPI
+    @RequestMapping("/getAPI")
+    @ResponseBody
+    public String getServletAPI(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        return request + "<br>" + response + "<br>" + session;
+    }
+
+}
+```
+
+---
+
+
+
+
+
+
+
+#### 获得请求头
+
+---
+
+<font color="red">**@RequestHeader**</font>
+
+​	使用@RequestHeader可以获得请求头信息，
+
+​	相当于web阶段学习的request.getHeader(name)
+
+@RequestHeader注解的属性如下：
+
+- <font color="red">**value：**</font>请求头的名称
+
+- <font color="red">**required：**</font>是否必须携带此请求头
+
+---
+
+<font color="red">**@CookieValue**</font>
+
+​	使用@CookieValue可以获得指定Cookie的值
+
+@CookieValue注解的属性如下：
+
+- <font color="red">**value：**</font>指定cookie的名称
+
+- <font color="red">**required：**</font>是否必须携带此cookie
+
+---
+
+```java
+package com.ganga.controller.X4_SpringMVC获取请求数据.J获取请求头;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/*
+* 获取请求头参数
+*
+* */
+@Controller
+@RequestMapping("/web/x4")
+public class SpringMvcGetHeader {
+
+
+    /*
+    * 注解: @RequestHeader
+    *   value指定获取的请求头
+    * */
+    @RequestMapping("/getHeader")
+    @ResponseBody
+    public String getHeader(@RequestHeader("User-Agent") String user_agent){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/getHeader
+        System.out.println(user_agent);
+        return user_agent;
+    }
+
+    /*
+    * 快速获取请求头参数 Cookie 参数键对应的的值
+    * 注解: @CookieValue
+    *   直接获取请求体
+    *   value cookie的键
+    *
+    * */
+    @RequestMapping("/getCookie")
+    @ResponseBody
+    public String getCookie(@CookieValue("JSESSIONID") String JSESSIONID){
+        //http://localhost:8080/B5_SpringMVC_war/web/x4/getCookie
+        System.out.println(JSESSIONID);
+        return JSESSIONID;
+    }
+
+
+}
+```
+
+---
+
+
+
+
+
+
+
+####  文件上传
+
+
+
+<font color="red">**文件上传三要素**</font>
+
+- 表单项type=“file”
+
+- 表单的提交方式是post
+
+- 表单的enctype属性是多部分表单形式，及enctype=“multipart/form-data”
+
+![image-20220414211734694](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/image-20220414211734694.png)
+
+
+
+<font color="red">**文件上传原理**</font>
+
+- 当form表单修改为多部分表单时，request.getParameter()将失效。
+
+- enctype=“application/x-www-form-urlencoded”时，form表单的正文内容格式是：
+    - <font color="red">**key=value&key=value&key=value **</font>
+
+- 当form表单的enctype取值为Mutilpart/form-data时，请求正文内容就变成多部分形式：
+
+![文件上传原理](https://gitee.com/embarrassing-sauce/my-ssm/raw/master/img/md-img/文件上传原理.png)
+
+---
+
+
+
+
+
+<font color="red">**文件上传步骤 **</font>
+
+- <font color="red">**① 导入fileupload和io坐标 **</font>
+
+- <font color="red">**② 配置文件上传解析器 **</font>
+
+- <font color="red">**③ 编写文件上传代码**</font>
+
+
+
+<font color="red">**① 导入fileupload和io坐标 **</font>
+
+`pom.xml`
+
+```xml
+<!-- 文件上传及io工具依赖坐标 -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.6</version>
+</dependency>
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.4</version>
+</dependency>
+```
+
+
+
+<font color="red">**② 配置文件上传解析器 **</font>
+
+`spring-mvc.xml`
+
+```xml
+<!-- 配置文件上传解析器 -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <!-- 上传文件总大小不超过40MB -->
+    <property name="maxUploadSize" value="40960000"/>
+    <!-- 上传单个问价大小不超过20MB -->
+    <property name="maxUploadSizePerFile" value="20480000"/>
+    <!-- 默认编码格式是utf-8 -->
+    <property name="defaultEncoding" value="utf-8"/>
+</bean>
+```
+
+
+
+<font color="red">**③ 编写文件上传代码**</font>
+
+`java代码`
+
+```java
+package com.ganga.controller.X4_SpringMVC获取请求数据.K文件上传;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+
+@Controller
+@RequestMapping("/web/x4")
+public class SendFile {
+
+    /**
+     *单文件上传
+     * @param filename 提交的文件名
+     * @param upload   注意: 提交表单input file的 name的名字 两个参数要的参数名一定要一样
+     */
+    @RequestMapping("/upload01")
+    @ResponseBody
+    public String upload01(String filename, MultipartFile upload){
+        //http://localhost:8080/B5_SpringMVC_war/jsp/upload.jsp
+        System.out.println(filename);
+        //obj.getOriginalFilename() 获取文件名称
+        String originalFilename = upload.getOriginalFilename();
+        try {
+            //obj.transferTo(File file) 文件对拷 将文件上传到该file上
+            upload.transferTo(new File("D:\\MySSM\\A2_Spring_MVC\\B5_SpringMVC\\src\\main\\webapp\\file\\"+originalFilename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "......";
+    }
+
+
+    /**
+     * 多文件上传
+     * @param fileName
+     * @param upload1 表单提交文件 name="upload1"
+     * @param upload2 表单提交文件 name="upload2"
+     * @param upload3 表单提交文件 name="upload3"
+     * @return
+     */
+    @RequestMapping("/upload02-1")
+    @ResponseBody
+    public String upload02(String fileName,MultipartFile upload1,MultipartFile upload2,MultipartFile upload3){
+        //http://localhost:8080/B5_SpringMVC_war/jsp/upload.jsp
+        System.out.println(fileName);
+        String name1 = upload1.getOriginalFilename();
+        String name2 = upload2.getOriginalFilename();
+        String name3 = upload3.getOriginalFilename();
+        try {
+            upload1.transferTo(new File("D:\\MySSM\\A2_Spring_MVC\\B5_SpringMVC\\src\\main\\webapp\\file\\" + name1));
+            upload2.transferTo(new File("D:\\MySSM\\A2_Spring_MVC\\B5_SpringMVC\\src\\main\\webapp\\file\\" + name2));
+            upload3.transferTo(new File("D:\\MySSM\\A2_Spring_MVC\\B5_SpringMVC\\src\\main\\webapp\\file\\" + name3));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "......";
+    }
+
+    /**
+     * 改进多文件上传
+     * @param fileName
+     * @param upload  提交一个upload数组
+     * @return
+     */
+    @RequestMapping("/upload02-2")
+    @ResponseBody
+    public String upload03(String fileName,MultipartFile[] upload){
+        //http://localhost:8080/B5_SpringMVC_war/jsp/upload.jsp
+        System.out.println(fileName);
+        for (MultipartFile multipartFile : upload) {
+            String originalFilename = multipartFile.getOriginalFilename();
+            try {
+                multipartFile.transferTo(new File("D:\\MySSM\\A2_Spring_MVC\\B5_SpringMVC\\src\\main\\webapp\\file\\"+originalFilename));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return "......";
+    }
+
+}
+```
+
+`表单:`
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body style="background: bisque">
+<br><br><br>
+<div align="center">
+    <h1>文件上传 - 单文件上传</h1>
+    <form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/web/x4/upload01">
+        文件名称:<input type="text" name="filename"><br>
+        上传文件:<input type="file" name="upload"><br>
+        <input type="submit" value="提交上传">
+    </form>
+</div>
+
+
+<br><br><br>
+<div align="center">
+    <h1>文件上传 - 多文件上传 - 02</h1>
+    <form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/web/x4/upload02-1">
+        文件名称:<input type="text" name="filename"><br>
+        上传文件:<input type="file" name="upload1"><br>
+        上传文件:<input type="file" name="upload2"><br>
+        上传文件:<input type="file" name="upload3"><br>
+        <input type="submit" value="提交上传">
+    </form>
+</div>
+
+
+<br><br><br>
+<div align="center">
+    <h1>文件上传 - 多文件上传 - 01</h1>
+    <form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/web/x4/upload02-2">
+        文件名称:<input type="text" name="filename"><br>
+        上传文件:<input type="file" name="upload"><br>
+        上传文件:<input type="file" name="upload"><br>
+        上传文件:<input type="file" name="upload"><br>
+        <input type="submit" value="提交上传">
+    </form>
+</div>
+
+
+</body>
+</html>
+
+```
 
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AXIOS</title>
+</head>
+<body>
+
+
+<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+<script>
+    var userList = new Array();
+    userList.push({username:"zhangsan",age:18});
+    userList.push({username:"lisi",age:28});
+
+    $.ajax({
+        type:"POST",
+        url:"${pageContext.request.contextPath}/user/quick15",
+        data:JSON.stringify(userList),
+        contentType:"application/json;charset=utf-8"
+    });
+
+</script>
+
+<!--
+<script src="/js/axios-0.18.0.js"></script>
+
+<script>
+
+    //get请求方式
+    axios({
+        method: "get",
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        url: "${pageContext.request.contextPath}/axiosServlet?username=ganga",
+    }).then(function (response){ //回调函数 接收响应
+        //响应的逻辑
+        alert(response.data);//函数参数对象调用data获取数据
+    })
+
+
+
+</script>
+-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AXIOS</title>
+</head>
+<body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+
+    //get请求方式
+    axios({
+        method: "get",
+        url: "${pageContext.request.contextPath}/cy.jpg",
+    }).then(function (response){ //回调函数 接收响应
+        //响应的逻辑
+        alert("ganga");//函数参数对象调用data获取数据
+    })
+
+
+</script>
+
+
+</body>
+</html>
