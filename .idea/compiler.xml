@@ -16,15 +16,18 @@
         <module name="B5_SpringMVC" />
         <module name="B3_SpringMVC_QuickStart" />
         <module name="B3_SpringAPI" />
+        <module name="A3_JdbcTemplate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="16">
       <module name="A1_Spring" target="1.5" />
+      <module name="A3_JdbcTemplate" target="16" />
       <module name="B1_SpringEntry" target="16" />
       <module name="B1_SpringStart" target="16" />
       <module name="B1_SpringWebBuild" target="16" />
       <module name="B2_SpringConfigFile" target="16" />
       <module name="B2_SpringWebContextLoaderListener" target="16" />
+      <module name="B3_JdbcTomplate" target="16" />
       <module name="B3_SpringAPI" target="16" />
       <module name="B3_SpringMVC_QuickStart" target="16" />
       <module name="B4_SpringDataSource" target="16" />

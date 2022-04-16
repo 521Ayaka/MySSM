@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="91bf2d2b-dc19-4cd7-99fa-e09cc7f9e007" name="@localhost Mapping">
+      <data-sources db="78361819-2055-4ea3-8c31-03ba754d3311" />
+      <scope>
+        <node negative="1">
+          <node kind="database" negative="1">
+            <node kind="schema" negative="1" />
+          </node>
+          <node kind="schema">
+            <name qname="dome_tables" />
+            <name qname="ling" />
+            <name qname="mybatis" />
+            <name qname="mysql" />
+            <name qname="newdata" />
+            <name qname="newgbk" />
+            <name qname="performance_schema" />
+            <name qname="sakila" />
+            <name qname="select_tables" />
+            <name qname="sys" />
+            <name qname="testsql" />
+            <name qname="webcase" />
+            <name qname="world" />
+          </node>
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>

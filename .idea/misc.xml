@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener" />
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart" />
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/A3_JdbcTemplate" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -21,6 +22,7 @@
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener/pom.xml" />
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/pom.xml" />
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/A3_JdbcTemplate/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="A3_JdbcTemplate:war">
+    <output-path>$PROJECT_DIR$/A3_JdbcTemplate/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>A3_JdbcTemplate</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="A3_JdbcTemplate-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="A3_JdbcTemplate:war exploded" />
+    </root>
+  </artifact>
+</component>
