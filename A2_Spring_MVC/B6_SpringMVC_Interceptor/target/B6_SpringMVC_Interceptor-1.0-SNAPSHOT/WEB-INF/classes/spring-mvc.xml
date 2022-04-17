@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+               ">
+    <!-- 扫描组件 -->
+    <context:component-scan base-package="com.ganga.controller"/>
+
+    <!-- 交给服务器开放无法识别资源 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- mvc注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/web/dame01/**"/>
+            <bean class="com.ganga.interceptor.MyInterceptor01"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/web/dame02/**"/>
+            <bean class="com.ganga.interceptor.MyInterceptor02"/>
+        </mvc:interceptor>
+
+        <!-- 他是一个Interceptor chain -->
+        <mvc:interceptor>
+            <mvc:mapping path="/web/dame03/**"/>
+            <bean class="com.ganga.interceptor.DameChain01"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/web/dame03/**"/>
+            <bean class="com.ganga.interceptor.DameChain02"/>
+        </mvc:interceptor>
+
+
+    </mvc:interceptors>
+
+</beans>

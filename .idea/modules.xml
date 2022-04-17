@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" filepath="$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" filepath="$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/MySSM.iml" filepath="$PROJECT_DIR$/MySSM.iml" />
     </modules>
   </component>
