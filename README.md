@@ -1142,11 +1142,11 @@ ApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(ser
 
 ### SpringMVC概述
 
-SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 中。
+SpringMVC 是一种基于 Java 的**实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架**，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 中。
 
 
 
-SpringMVC 已经成为目前最主流的MVC框架之一，并且随着Spring3.0 的发布，全面超越 Struts2，成为最优 秀的 MVC 框架。它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时 它还支持 RESTful 编程风格的请求。
+SpringMVC 已经成为目前最主流的MVC框架之一，并且随着Spring3.0 的发布，全面超越 Struts2，成为最优秀的 MVC 框架。它**通过一套注解**，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时 **它还支持 RESTful 编程风格的请求**。
 
 
 
@@ -1156,12 +1156,12 @@ SpringMVC 已经成为目前最主流的MVC框架之一，并且随着Spring3.0 
 
 开发步骤：
 
-	1. <font color="red">**导入SpringMVC相关坐标**</font>
-	1. <font color="red">**配置SpringMVC核心控制器DispathcerServlet**</font>
-	1. <font color="red">**创建Controller类和视图页面**</font>
-	1. <font color="red">**使用注解配置Controller类中业务方法的映射地址**</font>
-	1. <font color="red">**配置SpringMVC核心文件 spring-mvc.xml**</font>
-	1. <font color="red">**客户端发起请求测试**</font>
+1. <font color="red">**导入SpringMVC相关坐标**</font>
+2. <font color="red">**配置SpringMVC核心控制器DispathcerServlet**</font>
+3. <font color="red">**创建Controller类和视图页面**</font>
+4. <font color="red">**使用注解配置Controller类中业务方法的映射地址**</font>
+5. <font color="red">**配置SpringMVC核心文件 spring-mvc.xml**</font>
+6. <font color="red">**客户端发起请求测试**</font>
 
 
 
@@ -1210,8 +1210,9 @@ SpringMVC 已经成为目前最主流的MVC框架之一，并且随着Spring3.0 
 	<version>2.3.3</version>
 </dependency>
 
+<!-- jsp依赖坐标 -->
 <dependency>
-	<groupId>javax.servlet.jsp</groupId>
+    <groupId>javax.servlet.jsp</groupId>
 	<artifactId>jsp-api</artifactId>
 	<version>2.2</version>
 	<scope>provided</scope>
@@ -1287,7 +1288,7 @@ public class UserController {
     <!-- 第五步: 配置Spring核心文件 spring-mvc.xml -->
     <!-- 扫描controller组件 -->
     <context:component-scan base-package="com.ganga.controller"/>
-
+   
     <!-- 注意: 在web.xml当中 配置此文件的参数路径！ -->
 
 </beans>
@@ -1319,7 +1320,7 @@ public class UserController {
 
 
 
-① 用户发送请求至前端控制器DispatcherServlet。
+① 用户发送请求至**前端控制器DispatcherServlet。 **
 
 ② DispatcherServlet收到请求调用HandlerMapping处理器映射器。
 
@@ -1347,11 +1348,11 @@ public class UserController {
 
 1. <font color="red">**前端控制器：DispatcherServlet**</font>
 
-   ​	用户请求到达前端控制器，它就相当于 MVC 模式中的 C，DispatcherServlet 是整个流程控制的中心，由 它调用其它组件处理用户的请求，DispatcherServlet 的存在降低了组件之间的耦合性。
+   ​	用户请求到达前端控制器，它就**相当于 MVC 模式中的 C**，DispatcherServlet 是整个流程控制的中心，由它调用其它组件处理用户的请求，DispatcherServlet 的存在**降低了组件之间的耦合性。**
 
 2. <font color="red">**处理器映射器：HandlerMapping**</font>
 
-   ​	HandlerMapping 负责根据用户请求找到 Handler 即处理器，SpringMVC 提供了不同的映射器实现不同的 映射方式，例如：配置文件方式，实现接口方式，注解方式等。
+   ​	HandlerMapping 负责根据用户请求找到 Handler 即处理器，SpringMVC 提供了不同的映射器实现不同的映射方式，例如：配置文件方式，实现接口方式，注解方式等。
 
 3. <font color="red">**处理器适配器：HandlerAdapter**</font>
 
@@ -1359,15 +1360,15 @@ public class UserController {
 
 4. <font color="red">**处理器：Handler处理器：Handler**</font>
 
-   ​	它就是我们开发中要编写的具体业务控制器。由 DispatcherServlet 把用户请求转发到 Handler。由 Handler 对具体的用户请求进行处理。
+   ​	它就是我们开发中要编写的**具体业务控制器**。由 DispatcherServlet 把用户请求转发到 Handler。由 Handler 对具体的用户请求进行处理。
 
-5. <font color="red">**视图解析器：View Resolver**</font>
+5. <font color="red">**视图解析器：ViewResolver**</font>
 
-   ​	View Resolver 负责将处理结果生成 View 视图，View Resolver 首先根据逻辑视图名解析成物理视图名，即 具体的页面地址，再生成 View 视图对象，最后对 View 进行渲染将处理结果通过页面展示给用户。
+   ​	View Resolver 负责将处理结果生成 View 视图，ViewResolver 首先根据逻辑视图名解析成物理视图名，即 具体的页面地址，再生成 View 视图对象，最后对 View 进行渲染将处理结果通过页面展示给用户。
 
 6. <font color="red">**视图：View**</font>
 
-   ​	SpringMVC 框架提供了很多的 View 视图类型的支持，包括：jstlView、freemarkerView、pdfView等。最 常用的视图就是 jsp。一般情况下需要通过页面标签或页面模版技术将模型数据通过页面展示给用户，需要由程 序员根据业务需求开发具体的页面
+   ​	SpringMVC 框架提供了很多的 View 视图类型的支持，包括：jstlView、freemarkerView、pdfView等。**最常用的视图就是 jsp**。一般情况下需要通过页面标签或页面模版技术将模型数据通过页面展示给用户，需要由程 序员根据业务需求开发具体的页面
 
 
 
@@ -1418,6 +1419,7 @@ package com.ganga.controller.X1_RequestMapping注解;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+//枚举类
 import org.springframework.web.bind.annotation.RequestMethod;
 
 //1. 不设置路径
@@ -1634,6 +1636,7 @@ public class ReturnStringSkip {
         System.out.println("run dame05 method02");
         return "redirect:http://localhost:8080/B5_SpringMVC_war/jsp/dame05.jsp";
     }
+    
     //重定向 绝对路径
 
 }
@@ -1752,7 +1755,7 @@ public void quickMethod4(HttpServletResponse response) throws IOException {
 }
 ```
 
-② 将需要回写的字符串直接返回，但此时需要通过**@ResponseBody**注解告知SpringMVC框架，方法 返回的字符串不是跳转是直接在http响应体中返回。
+② 将    的字符串直接返回，但此时需要通过**@ResponseBody**注解告知SpringMVC框架，方法 返回的字符串不是跳转是直接在http响应体中返回。
 
 ```java
 @RequestMapping("/quick5")
@@ -1777,7 +1780,7 @@ return "hello springMVC!!!";
 <dependency>
 	<groupId>com.fasterxml.jackson.core</groupId>
 	<artifactId>jackson-core</artifactId>
-	<version>2.9.0</version>
+	<version>2.9.0</version> 
 </dependency>
 
 <!-- json -->
@@ -2790,6 +2793,7 @@ public class SendFile {
 
 
 
+### SpringMVC拦截过滤器
 
 
 
@@ -2815,6 +2819,859 @@ public class SendFile {
 
 
 
-## MyBatis框架
+
+
+## SpringJdbcTemplate
+
+
+
+### JdbcTemplate概述
+
+它是spring框架中提供的一个对象，是**对原始繁琐的Jdbc API对象的简单封装**。spring框架为我们提供了很多的操作模板类。例如：操作关系型数据的JdbcTemplate和HibernateTemplate，操作nosql数据库的RedisTemplate，操 作消息队列的JmsTemplate等等。
+
+
+
+### JdbcTemplate开发步骤
+
+
+
+<font color="red">**① 导入spring-jdbc和spring-tx坐标**</font>
+
+<font color="red">**② 创建数据库表和实体**</font>
+
+<font color="purple">**③ 创建JdbcTemplate对象注入DataSource放入容器**</font>
+
+<font color="red">**④ 执行数据库操作**</font>
+
+
+
+---
+
+### 演示操作:
+
+<font color="red">**① 导入spring-jdbc和spring-tx坐标**</font>
+
+`pom.xml`
+
+```xml
+<!-- 导入JdbcTemplate相关桌标 -->
+<!-- spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.3.18</version>
+</dependency>
+<!-- spring-tx -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-tx</artifactId>
+    <version>5.3.18</version>
+</dependency>
+```
+
+---
+
+<font color="red">**② 创建数据库表和实体**</font>
+
+---
+
+<font color="purple">**③ 创建JdbcTemplate对象注入DataSource放入容器**</font>
+
+`jdbc.properties`
+
+```properties
+jdbc.driverClass=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql:///webcase?useSSL=false&useServerPrepStmts=true
+jdbc.user=root
+jdbc.password=ganga
+```
+
+
+`applicationContext.xml`
+
+```xml
+<!-- 添加jdbc.properties文件 -->
+<context:property-placeholder location="classpath:jdbc.properties"/>
+<!-- 设置相应数据源配置 并 放入Spring容器当中 -->
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <property name="driverClass" value="${jdbc.driverClass}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="user" value="${jdbc.user}"/>
+    <property name="password" value="${jdbc.password}"/>
+</bean>
+<!-- 创建jdbc模板bean 并注入数据源 放入Spring容器当中 -->
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
+```
+
+---
+
+<font color="red">**④ 执行数据库操作**</font>
+
+```java
+package com.ganga.test;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.testng.annotations.Test;
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
+import java.beans.PropertyVetoException;
+
+public class JdbcTemplateTest {
+
+    @Test
+    public void entryTest01() throws PropertyVetoException {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        //要指定相应的数据源 jdbcTemplate.setDataSource
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        dataSource.setDriverClass("com.mysql.jdbc.Driver");
+        dataSource.setJdbcUrl("jdbc:mysql:///webcase?useSSL=false");
+        dataSource.setUser("root");
+        dataSource.setPassword("ganga");
+        //设置数据源信息
+        jdbcTemplate.setDataSource(dataSource);
+
+        //执行操作
+        int row = jdbcTemplate.update("insert into account values(?,?)", "ganga", 100000000);
+        System.out.println(row);
+
+        /*int row = jdbcTemplate.update("delete from account where user = ? ", "ganga");
+        System.out.println(row);*/
+    }
+
+    /*
+    *
+    * 上面与之前学过的 进行改造
+    *
+    * */
+
+    @Test
+    public void entryTest02(){
+        //直接从容器中获取已经注入好数据源的JdbcTemplate对象
+        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+        JdbcTemplate jdbcTemplate = app.getBean(JdbcTemplate.class);
+
+        //执行操作
+        int row = jdbcTemplate.update("insert into account values(?,?)","gangajiang","1230000");
+        System.out.println(row);
+
+    }
+
+}
+```
+
+---
+
+---
+
+---
+
+
+
+
+
+
+
+
+
+### JdbcTemplate的常用操作
+
+<font color="red">**增删改查**</font>
+
+`JdbcTemplateCRUDTest.java`
+
+```java
+package com.ganga.test;
+
+import com.ganga.pojo.Account;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.List;
+
+//替换原生测试内核
+@RunWith(SpringJUnit4ClassRunner.class)
+//加载配置文件
+@ContextConfiguration("classpath:applicationContext.xml")
+public class JdbcTemplateCRUDTest {
+
+    //注入需要的对象
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    //测试添加操作
+    @Test
+    public void updateAddTest(){
+        String sql = "insert into account values(?,?)";
+        int row = jdbcTemplate.update(sql, "gangale", "1");
+        System.out.println(row);
+    }
+
+    //测试删除操作
+    @Test
+    public void updateDeleteTest(){
+        String sql = "delete from account where user = ?";
+        int row = jdbcTemplate.update(sql, "gangale");
+        System.out.println(row);
+    }
+
+    //测试修改操作
+    @Test
+    public void updateUpdateTest(){
+        String sql = "update account set money=? where user=?";
+        int row = jdbcTemplate.update(sql,"2","gangale");
+        System.out.println(row);
+    }
+
+
+    /**
+     * 测试 常用的 查询操作 01
+     * <T> List<T> query(String sql,RowMapper<T> rowMapper)
+     *
+     * RowMapper<T>实现类: BeanPropertyRowMapper<T>
+     *
+     *  BeanPropertyRowMapper<T> T是要封装的类型
+     *
+     *  BeanPropertyRowMapper<T>(T.Class) 构造参数是要封装的类型的字节码文件
+     *
+     *  List<T> BeanPropertyRowMapper<T>(T.Class) 返回的数据类型是List<T>
+     *
+     *  演示
+     *  query(sql, new BeanPropertyRowMapper<Account>(Account.class))
+     */
+    @Test
+    public void querySelectTest01(){
+        String sql = "select * from account";
+        List<Account> query = jdbcTemplate.query(sql, new BeanPropertyRowMapper<Account>(Account.class));
+        System.out.println(query);
+    }
+
+
+    /**
+     * 测试 常用的 查询操作 02
+     *
+     * <T> T queryForObject(
+     *      <T> List<T> query(String sql, RowMapper<T> rowMapper, @Nullable Object... args)
+     *  )方法
+     *
+     *  RowMapper<T> rowMapper 和上面一样 只是可以设置参数以及阐述占位符
+     *
+     *  返回值直接是一个 T 而不是List<T>
+     *      也就是说直接返回一个对象
+     *
+     *  演示
+     *  query(sql, new BeanPropertyRowMapper<Account>(Account.class),"ganga")
+     */
+    @Test
+    public void querySelectTest02(){
+
+        String sql = "select * from account where user=?";
+        Account ganga = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Account>(Account.class), "ganga");
+        System.out.println(ganga);
+
+    }
+
+    /**
+     * 测试 常用的 查询操作 02
+     *
+     * <T> T queryForObject(
+     *      <T> List<T> queryForList(String sql, Class<T> elementType)
+     *  )方法
+     *
+     *  Class<T> elementType 可以是一些简单的数据类型 如： Long  Double Integer ...
+     *
+     *  返回值直接是一个 T 而不是List<T>
+     *      也就是说直接返回一个对象
+     *
+     *
+     *
+     *  演示
+     *  queryForList(sql, Long.class)
+     */
+    @Test
+    public void querySelectTest03(){
+
+        String sql = "select count(*) from account";
+        List<Long> longs = jdbcTemplate.queryForList(sql, Long.class);
+        System.out.println(longs);
+
+    }
+
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## SpringAOP
+
+
+
+
+
+### JDK 动态代理
+
+
+
+
+
+#### 演示一
+
+步骤：
+
+1. 定义目标类接口
+2. 实现目标类接口 重写目标类方法
+3. 创建一个代理工厂类 实现 `InvocationHandler` 实现`invoke()`方法
+4. 在invoke()方法中实现 ：1. 增强方法   2. 调用目标方法
+5. 通过Proxy.newProxyInstance()方法获取动态代理对象
+
+
+
+
+
+##### 第一步:
+
+定义目标类接口
+
+```java
+package com.ganga.servlet;
+public interface UsbSell {
+    float sell(int amount);
+}
+```
+
+
+
+##### 第二步:
+
+实现目标类接口 重写目标类方法
+
+```java
+package com.ganga.factory;
+import com.ganga.servlet.UsbSell;
+
+public class UsbSellImpl implements UsbSell {
+    @Override
+    public float sell(int amount) {
+        System.out.println("==========目标方法===========");
+        System.out.println("目标对象方法执行...");
+        return 85.0f;
+    }
+}
+```
+
+
+
+#####  第三步  第四步:
+
+创建一个代理工厂类 实现 `InvocationHandler` 实现`invoke()`方法
+
+在invoke()方法中实现 ：1. 增强方法   2. 调用目标方法
+
+```java
+package com.ganga.handler;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+public class MyInvocationHandler implements InvocationHandler {
+
+    //定义目标对象
+    private Object target;
+
+    //构造方法创建时 传入目标对象
+    public MyInvocationHandler(Object target){
+        this.target = target;
+    }
+
+
+    /**
+     *
+     * @param proxy 目标对象 这里不需要设置和调用 也不需要调用
+     * @param method 目标方法 method.invoke(定义的目标对象)
+     * @param args 目标方法参数 method.invoke(定义的目标对象 , args)
+     * @return  和目标方法返回值相同 代理返回
+     * @throws Throwable
+     */
+    @Override
+    public Object invoke
+        (Object proxy, Method method, Object[] args) throws Throwable {
+
+        Object money = null;
+
+        //调用目标方法 传入参数
+        money = method.invoke(target, args);
+
+
+        //增强方法
+        System.out.println("==========增强方法===========");
+        System.out.println("原工厂单个价钱为: " + money);
+        if (money != null){
+            //增强方法逻辑
+            float moneyNew = (float) money;
+            moneyNew = moneyNew +25;
+            money = moneyNew;
+        }
+        System.out.println("获取优惠卷.......");
+        System.out.println("代理出售单个价钱为:" + money);
+        System.out.println("============================");
+
+        //目标对象方法返回什么 代理之后返回什么类型
+        return money;
+    }
+}
+```
+
+
+
+#####  第五步:
+
+通过Proxy.newInstance()方法获取动态代理对象
+
+```java
+package com.ganga;
+
+import com.ganga.factory.UsbSellImpl;
+import com.ganga.handler.MyInvocationHandler;
+import com.ganga.servlet.UsbSell;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
+public class DameMain {
+
+    public static void main(String[] args) {
+
+        //创建目标对象
+        UsbSell usbSell = new UsbSellImpl();
+
+        //[创建代理功能] 实现的InvocationHandler对象 并放入目标对象
+        InvocationHandler factory = new MyInvocationHandler(usbSell);
+
+        //[创建代理对象] 使用Proxy.newProxyInstance() 方法
+        /**
+         * 参数有三个
+         */
+        UsbSell usbSellProxy = (UsbSell) Proxy.newProxyInstance(
+                usbSell.getClass().getClassLoader(),
+                usbSell.getClass().getInterfaces(),
+                factory
+        );
+
+        //通过代理对象执行代理方法 中的 method.invoke(目标方法,参数)方法 代理执行目标方法 并获取方法的返回值
+        float money = usbSellProxy.sell(1);
+        System.out.println("代理出售单个价钱为:" + money);
+
+    }
+/*运行结果:
+
+==========目标方法===========
+目标对象方法执行...
+==========增强方法===========
+原工厂单个价钱为: 85.0
+获取优惠卷.......
+代理出售单个价钱为:110.0
+============================
+代理出售单个价钱为:110.0
+
+*/
+}
+
+```
+
+
+
+
+
+
+
+
+
+#### 演示二
+
+
+
+##### UserDao
+
+```java
+package com.ganga.servlet;
+
+public interface UserDao {
+
+    int getAge(String name, int age);
+
+}
+```
+
+
+
+##### UserDaoImpl
+
+```java
+package com.ganga.servlet.impl;
+
+import com.ganga.servlet.UserDao;
+
+public class UserDaoImpl implements UserDao {
+    @Override
+    public int getAge(String name, int age) {
+        System.out.println("目标方法执行......");
+        System.out.println("代理前的目标结果是:" + age);
+        return age;
+    }
+}
+```
+
+
+
+##### UserInvocationHandler [重点]
+
+```java
+package com.ganga.handler;
+
+import com.ganga.aspect.MyAspect;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class UserInvocationHandler implements InvocationHandler {
+
+    //创建目标类对象
+    Object target;
+
+
+    /**
+     *封装成一个工厂方法 直接获取代理对象的方法
+     * @param target
+     * @return 返回一个代理对象Proxy.newProxyInstance()
+     */
+    public Object getInstance(Object target) {
+        this.target = target;
+        return Proxy.newProxyInstance(
+                target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(),
+                this);
+        //this: 字节就是那个实现好的 InvocationHandler
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object ageObj;
+
+        //增强方法
+        MyAspect myAspect = new MyAspect();
+        myAspect.check_permission();
+
+        //目标方法
+        ageObj = method.invoke(target, args);
+
+        //增强方法
+        if (ageObj != null){
+            int age = (int) ageObj;
+            age = age + 1;
+            ageObj = age;
+        }
+        myAspect.log();
+
+        //返回目标方法的结果
+        return ageObj;
+    }
+}
+```
+
+
+
+
+
+##### MyAspect
+
+```java
+package com.ganga.aspect;
+//这是一个切面
+public class MyAspect {
+    public void check_permission(){
+        System.out.println("检查权限...");
+    }
+    public void log(){
+        System.out.println("日志记录...");
+    }
+}
+```
+
+
+
+##### DameUser
+
+```java
+package com.ganga;
+
+import com.ganga.handler.UserInvocationHandler;
+import com.ganga.servlet.UserDao;
+import com.ganga.servlet.impl.UserDaoImpl;
+
+public class DameUser {
+
+    public static void main(String[] args) {
+        
+        //创建目标对象
+        UserDao userDao = new UserDaoImpl();
+        
+        //创建代理工厂对象 调用getInstance()方法 返回代理对象
+        UserDao proxy = (UserDao) new UserInvocationHandler().getInstance(userDao);
+
+        //调用方法
+        int age = proxy.getAge("尴尬酱", 9);
+
+        //输出代理后返回的结果
+        System.out.println("增强方法后的 代理后的 返回结果:"+age);
+
+    }
+
+}
+```
+
+
+
+
+
+
+
+
+
+### Cglib动态代理
+
+
+
+
+
+#### UserTarget
+
+```java
+package com.ganga.service;
+
+public class UserTarget {
+
+    /**
+     * 目标方法
+     * @param name
+     * @param age
+     * @return
+     */
+    public int getAge(String name,int age){
+        System.out.println("目标方法执行......");
+        System.out.println("目标方法执行age参数值为: " + age);
+        return age;
+    }
+
+}
+```
+
+
+
+#### CglibProxy [重点]
+
+```java
+package com.ganga.proxy;
+
+import com.ganga.aspect.MyAspect;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
+
+public class CglibProxy implements MethodInterceptor {
+
+    //目标对象
+    Object target;
+
+    /**
+     * 创建代理对象的方法
+     * @param target 调用时传入相应的目标对象
+     * @return
+     */
+    public Object createProxy(Object target){
+        //转入目标对象
+        this.target = target;
+
+        //创建Enhancer核心增强代码
+        Enhancer enhancer = new Enhancer();
+        //设置被代理的对象的类型
+        enhancer.setSuperclass(target.getClass());
+        //设置如何增强 参数需要一个MethodInterceptor 此类即是
+        enhancer.setCallback(this);
+        //获取动态代理对象
+        Object proxy = enhancer.create();
+        return proxy;
+
+    }
+
+    /**
+     *
+     * @param proxy
+     * @param method
+     * @param args
+     * @param methodProxy
+     * @return
+     * @throws Throwable
+     */
+    @Override
+    public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+        //实现增强方法  调用目标前
+        MyAspect myAspect = new MyAspect();
+        myAspect.check_permission();
+
+        //实现调用目标方法 --反射
+        //方式一: 使用原目标对象调用目标方法
+        Object ageObj = null;
+        ageObj = method.invoke(target, args);
+        //方式二: 使用代理对象调用目标方法
+        //Object age = methodProxy.invokeSuper(proxy, args);
+
+        //实现增强方法  调用方法后
+        if (ageObj != null){
+            int age = (int) ageObj;
+            age = age + 1;
+            ageObj = age;
+        }
+        myAspect.log();
+
+        //返回代理方法返回结果 可也是增强后的方法
+        return ageObj;
+    }
+}
+```
+
+
+
+
+
+#### MyAspect
+
+```java
+package com.ganga.aspect;
+//这是一个切面
+public class MyAspect {
+    public void check_permission(){
+        System.out.println("检查权限...");
+    }
+    public void log(){
+        System.out.println("日志记录...");
+    }
+}
+```
+
+
+
+#### CglibProxyTest
+
+```java
+package com.ganga.test;
+
+import com.ganga.proxy.CglibProxy;
+import com.ganga.service.UserTarget;
+import net.sf.cglib.proxy.MethodInterceptor;
+
+public class CglibProxyTest {
+
+    public static void main(String[] args) {
+
+        //创建代理对象
+        UserTarget userTarget = new UserTarget();
+        //创建代理工厂对象
+        CglibProxy im = new CglibProxy();
+        //调用工厂对象对象 获取动态代理
+        UserTarget proxy = (UserTarget) im.createProxy(userTarget);
+        //代理后
+        int age = proxy.getAge("尴尬酱", 9);
+
+        System.out.println("代理后age的值是: " + age);
+
+    }
+
+/*
+
+检查权限...
+目标方法执行......
+目标方法执行age参数值为: 9
+日志记录...
+代理后age的值是: 10
+
+*/
+}
+```
+
+
+
+
+
+
+
+
+
+### AOP面向切面编程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## MyBatis-plase框架
 
 ### 介绍

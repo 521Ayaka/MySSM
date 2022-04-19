@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form id="frmTmp">
+        <fieldset>
+            <legend>请在下面输入两个数字</legend>
+            <input id="txtNum_1" type="text" class="inputtxt" v-model="t1"/>*
+            <input id="txtNum_2" type="text" class="inputtxt" v-model="t2"/>=
+            {{num}}<!--插值表达式 插入模型数据-->
+            <!--<output onFormInput="value=txtNum_1.value*txtNum_2.value"></output>-->
+        </fieldset>
+    </form>
+
+    <!-- 异步请求vue 建立模型数据 返送异步请求 -->
+<script src="/js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#frmTmp",
+        data(){
+            return{
+                t1:"",
+                t2:"",
+                num:0
+            }
+        },
+        watch:{
+            t1:function() {
+                this.num = parseInt(this.t1) * parseInt(this.t2);
+            },
+            t2:function(){
+                this.num = parseInt(this.t2) * parseInt(this.t1);
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

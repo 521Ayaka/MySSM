@@ -6,6 +6,8 @@
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart" />
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC" />
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception" />
+    <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B8_SpringMVC_Exception" />
     <file type="web" url="file://$PROJECT_DIR$/A3_JdbcTemplate" />
   </component>
   <component name="MavenProjectsManager">
@@ -25,7 +27,16 @@
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/pom.xml" />
         <option value="$PROJECT_DIR$/A3_JdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/A7_SpringMVC_Exception/pom.xml" />
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B2_Cglib_DynamicProxy/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/A2_Spring_MVC/B8_SpringMVC_Exception/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">

@@ -7,13 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="B6_SpringJunit" />
+        <module name="B1_JDK_DynamicProxy" />
         <module name="B1_SpringStart" />
+        <module name="B2_Cglib_DynamicProxy" />
         <module name="B2_SpringWebContextLoaderListener" />
-        <module name="B5_SpringAnnotation" />
         <module name="B2_SpringConfigFile" />
+        <module name="B5_SpringMVC" />
+        <module name="B7_SpringMVC_Exception" />
+        <module name="B5_SpringAnnotation" />
         <module name="B4_SpringDataSource" />
         <module name="B1_SpringWebBuild" />
-        <module name="B5_SpringMVC" />
         <module name="B3_SpringMVC_QuickStart" />
         <module name="B3_SpringAPI" />
         <module name="B6_SpringMVC_Interceptor" />
@@ -23,9 +26,12 @@
     <bytecodeTargetLevel target="16">
       <module name="A1_Spring" target="1.5" />
       <module name="A3_JdbcTemplate" target="16" />
+      <module name="A4_Spring_AOP" target="16" />
+      <module name="B1_JDK_DynamicProxy" target="16" />
       <module name="B1_SpringEntry" target="16" />
       <module name="B1_SpringStart" target="16" />
       <module name="B1_SpringWebBuild" target="16" />
+      <module name="B2_Cglib_DynamicProxy" target="16" />
       <module name="B2_SpringConfigFile" target="16" />
       <module name="B2_SpringWebContextLoaderListener" target="16" />
       <module name="B3_JdbcTomplate" target="16" />
@@ -36,6 +42,8 @@
       <module name="B5_SpringMVC" target="16" />
       <module name="B6_SpringJunit" target="16" />
       <module name="B6_SpringMVC_Interceptor" target="16" />
+      <module name="B7_SpringMVC_Exception" target="16" />
+      <module name="B8_SpringMVC_Exception" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

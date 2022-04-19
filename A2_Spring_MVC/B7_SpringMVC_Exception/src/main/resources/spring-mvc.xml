@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+               ">
+    <!-- 扫描组件 -->
+    <context:component-scan base-package="com.ganga.controller"/>
+
+    <!-- 交给服务器开放无法识别资源 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- mvc注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!-- 配置异常处理器 SimpleMappingExceptionResolver -->
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        &lt;!&ndash;默认异常&ndash;&gt;
+        <property name="defaultErrorView" value="/index.jsp"/>
+        &lt;!&ndash;手动添加异常&ndash;&gt;
+        <property name="exceptionMappings">
+            <map>
+                &lt;!&ndash; 类转换异常 &ndash;&gt;
+                <entry key="java.lang.ClassCastException" value="/error.jsp"/>
+                &lt;!&ndash; 除以0的异常 &ndash;&gt;
+                <entry key="java.lang.ArithmeticException" value="/error.jsp"/>
+                &lt;!&ndash; 找不到资源异常 &ndash;&gt;
+                <entry key="java.io.FileNotFoundException" value="/error.jsp"/>
+                &lt;!&ndash; 空指针异常 &ndash;&gt;
+                <entry key="java.lang.NullPointerException" value="/error.jsp"/>
+                &lt;!&ndash; 自定义异常 &ndash;&gt;
+                <entry key="com.ganga.exception.MyException" value="/error.jsp"/>
+            </map>
+        </property>
+    </bean>-->
+
+
+    <!-- 配置自定义异常 HandlerExceptionResolver -->
+    <bean class="com.ganga.exception.MyHandlerExceptionResolver"/>
+
+
+</beans>
