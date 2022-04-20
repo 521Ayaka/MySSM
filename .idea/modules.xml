@@ -12,8 +12,10 @@
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B2_Cglib_DynamicProxy/B2_Cglib_DynamicProxy.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B2_Cglib_DynamicProxy/B2_Cglib_DynamicProxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" filepath="$PROJECT_DIR$/A1_Spring/B2_SpringConfigFile/B2_SpringConfigFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener/B2_SpringWebContextLoaderListener.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B2_SpringWebContextLoaderListener/B2_SpringWebContextLoaderListener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B3_SpringAOP_Concept/B3_SpringAOP_Concept.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B3_SpringAOP_Concept/B3_SpringAOP_Concept.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" filepath="$PROJECT_DIR$/A1_Spring/B3_SpringAPI/B3_SpringAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/B3_SpringMVC_QuickStart.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/B3_SpringMVC_QuickStart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/B4_SpringAOP_Xml.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/B4_SpringAOP_Xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" filepath="$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" filepath="$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" />

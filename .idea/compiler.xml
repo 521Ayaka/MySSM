@@ -13,11 +13,13 @@
         <module name="B2_SpringWebContextLoaderListener" />
         <module name="B2_SpringConfigFile" />
         <module name="B5_SpringMVC" />
+        <module name="B3_SpringAOP_Concept" />
         <module name="B7_SpringMVC_Exception" />
         <module name="B5_SpringAnnotation" />
         <module name="B4_SpringDataSource" />
         <module name="B1_SpringWebBuild" />
         <module name="B3_SpringMVC_QuickStart" />
+        <module name="B4_SpringAOP_Xml" />
         <module name="B3_SpringAPI" />
         <module name="B6_SpringMVC_Interceptor" />
         <module name="A3_JdbcTemplate" />
@@ -35,8 +37,10 @@
       <module name="B2_SpringConfigFile" target="16" />
       <module name="B2_SpringWebContextLoaderListener" target="16" />
       <module name="B3_JdbcTomplate" target="16" />
+      <module name="B3_SpringAOP_Concept" target="16" />
       <module name="B3_SpringAPI" target="16" />
       <module name="B3_SpringMVC_QuickStart" target="16" />
+      <module name="B4_SpringAOP_Xml" target="16" />
       <module name="B4_SpringDataSource" target="16" />
       <module name="B5_SpringAnnotation" target="16" />
       <module name="B5_SpringMVC" target="16" />

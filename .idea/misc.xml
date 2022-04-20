@@ -31,6 +31,8 @@
         <option value="$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/pom.xml" />
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/pom.xml" />
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B2_Cglib_DynamicProxy/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B3_SpringAOP_Concept/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
