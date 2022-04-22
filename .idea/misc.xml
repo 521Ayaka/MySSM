@@ -33,6 +33,8 @@
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B2_Cglib_DynamicProxy/pom.xml" />
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B3_SpringAOP_Concept/pom.xml" />
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B5_SpringAOP_Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/A4_Spring_AOP/B6_SpringAOP_TX_Xml/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -17,8 +17,10 @@
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/B3_SpringMVC_QuickStart.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B3_SpringMVC_QuickStart/B3_SpringMVC_QuickStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/B4_SpringAOP_Xml.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B4_SpringAOP_Xml/B4_SpringAOP_Xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" filepath="$PROJECT_DIR$/A1_Spring/B4_SpringDataSource/B4_SpringDataSource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B5_SpringAOP_Annotation/B5_SpringAOP_Annotation.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B5_SpringAOP_Annotation/B5_SpringAOP_Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" filepath="$PROJECT_DIR$/A1_Spring/B5_SpringAnnotation/B5_SpringAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B5_SpringMVC/B5_SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B6_SpringAOP_TX_Xml/B6_SpringAOP_TX_Xml.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B6_SpringAOP_TX_Xml/B6_SpringAOP_TX_Xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" filepath="$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" />

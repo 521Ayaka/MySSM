@@ -18,11 +18,13 @@
         <module name="B5_SpringAnnotation" />
         <module name="B4_SpringDataSource" />
         <module name="B1_SpringWebBuild" />
+        <module name="B6_SpringAOP_TX_Xml" />
         <module name="B3_SpringMVC_QuickStart" />
         <module name="B4_SpringAOP_Xml" />
         <module name="B3_SpringAPI" />
         <module name="B6_SpringMVC_Interceptor" />
         <module name="A3_JdbcTemplate" />
+        <module name="B5_SpringAOP_Annotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="16">
@@ -43,7 +45,9 @@
       <module name="B4_SpringAOP_Xml" target="16" />
       <module name="B4_SpringDataSource" target="16" />
       <module name="B5_SpringAnnotation" target="16" />
+      <module name="B5_SpringAOP_Annotation" target="16" />
       <module name="B5_SpringMVC" target="16" />
+      <module name="B6_SpringAOP_TX_Xml" target="16" />
       <module name="B6_SpringJunit" target="16" />
       <module name="B6_SpringMVC_Interceptor" target="16" />
       <module name="B7_SpringMVC_Exception" target="16" />

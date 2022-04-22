@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+               ">
+
+    <!-- 引入jdbc.properties文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!-- SpringJdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- dao层 -->
+    <bean id="transferDao" class="com.ganga.dao.impl.TransferDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <!-- service层 -->
+    <bean id="transferServlet" class="com.ganga.service.impl.TransferServiceImpl">
+        <property name="transferDao" ref="transferDao"/>
+    </bean>
+
+
+
+
+
+
+
+
+    <!-- 配置平台事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置通知: 事务的增强 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- 配置事务的参数属性 TransactionDefinition-->
+        <tx:attributes>
+            <!-- 业务层的那些方法 事务的属性要设置成扫描 -->
+            <tx:method name="transfer" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="-1" read-only="false"/>
+            <tx:method name="sell" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="-1" read-only="false"/>
+            <tx:method name="update*" isolation="REPEATABLE_READ" propagation="REQUIRED" timeout="-1" read-only="false"/>
+            <!--<tx:method name="*" read-only="true"/>-->
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 织入: 业务切点+事务增强 -->
+    <aop:config>
+        <!-- 配置切面  通知引用事务管理 切点业务层的所有方法 -->
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ganga.service.impl..*.*(..))"/>
+        <!--<aop:aspect ref=""> 事务的织入不用这种方式
+            <aop:after method="" pointcut="execution()"/>
+        </aop:aspect>-->
+    </aop:config>
+
+
+
+
+</beans>
