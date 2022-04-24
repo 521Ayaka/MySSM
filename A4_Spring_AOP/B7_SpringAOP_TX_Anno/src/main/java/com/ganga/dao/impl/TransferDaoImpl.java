@@ -1,16 +1,16 @@
 package com.ganga.dao.impl;
 
 import com.ganga.dao.TransferDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class TransferDaoImpl implements TransferDao {
 
     //注入SpringJdbcTemplate对象
+    @Autowired
     private JdbcTemplate jdbcTemplate;
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
 
     @Override
     public void out(String user, double money) {

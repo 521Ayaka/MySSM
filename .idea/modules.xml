@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/A2_Spring_MVC.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/A2_Spring_MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/A3_JdbcTemplate/A3_JdbcTemplate.iml" filepath="$PROJECT_DIR$/A3_JdbcTemplate/A3_JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/A4_Spring_AOP.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/A4_Spring_AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A5_MyBatis/A5_MyBatis.iml" filepath="$PROJECT_DIR$/A5_MyBatis/A5_MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_Integration/A6_SSM_Integration.iml" filepath="$PROJECT_DIR$/A6_SSM_Integration/A6_SSM_Integration.iml" />
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/B1_JDK_DynamicProxy.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/B1_JDK_DynamicProxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" filepath="$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/B1_SpringWebBuild.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/B1_SpringWebBuild.iml" />
@@ -23,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B6_SpringAOP_TX_Xml/B6_SpringAOP_TX_Xml.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B6_SpringAOP_TX_Xml/B6_SpringAOP_TX_Xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" filepath="$PROJECT_DIR$/A1_Spring/B6_SpringJunit/B6_SpringJunit.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B6_SpringMVC_Interceptor/B6_SpringMVC_Interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B7_SpringAOP_TX_Anno/B7_SpringAOP_TX_Anno.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B7_SpringAOP_TX_Anno/B7_SpringAOP_TX_Anno.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/MySSM.iml" filepath="$PROJECT_DIR$/MySSM.iml" />
     </modules>

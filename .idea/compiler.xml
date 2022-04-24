@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="B6_SpringJunit" />
+        <module name="A5_MyBatis" />
         <module name="B1_JDK_DynamicProxy" />
         <module name="B1_SpringStart" />
         <module name="B2_Cglib_DynamicProxy" />
@@ -14,9 +15,11 @@
         <module name="B2_SpringConfigFile" />
         <module name="B5_SpringMVC" />
         <module name="B3_SpringAOP_Concept" />
+        <module name="A6_SSM_Integration" />
         <module name="B7_SpringMVC_Exception" />
         <module name="B5_SpringAnnotation" />
         <module name="B4_SpringDataSource" />
+        <module name="B7_SpringAOP_TX_Anno" />
         <module name="B1_SpringWebBuild" />
         <module name="B6_SpringAOP_TX_Xml" />
         <module name="B3_SpringMVC_QuickStart" />
@@ -31,6 +34,8 @@
       <module name="A1_Spring" target="1.5" />
       <module name="A3_JdbcTemplate" target="16" />
       <module name="A4_Spring_AOP" target="16" />
+      <module name="A5_MyBatis" target="16" />
+      <module name="A6_SSM_Integration" target="16" />
       <module name="B1_JDK_DynamicProxy" target="16" />
       <module name="B1_SpringEntry" target="16" />
       <module name="B1_SpringStart" target="16" />
@@ -50,6 +55,7 @@
       <module name="B6_SpringAOP_TX_Xml" target="16" />
       <module name="B6_SpringJunit" target="16" />
       <module name="B6_SpringMVC_Interceptor" target="16" />
+      <module name="B7_SpringAOP_TX_Anno" target="16" />
       <module name="B7_SpringMVC_Exception" target="16" />
       <module name="B8_SpringMVC_Exception" target="16" />
     </bytecodeTargetLevel>

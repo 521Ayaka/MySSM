@@ -533,7 +533,7 @@ applicationContext.xml
                 <ref bean="user1"/>
                 <ref bean="user2"/>
                 <ref bean="user3"/>
-                <bean class="com.ganga.pojo.User">
+                <bean class="com.ganga.com.ganga.pojo.User">
                     <constructor-arg name="username" value="盖伦哥哥"/>
                     <constructor-arg name="age" value="10"/>
                     <constructor-arg name="adds" value="德玛西亚"/>
@@ -562,17 +562,17 @@ applicationContext.xml
     </bean>
 
     <!--user对象-->
-    <bean id="user1" class="com.ganga.pojo.User">
+    <bean id="user1" class="com.ganga.com.ganga.pojo.User">
         <constructor-arg name="username" value="亚索哥哥"/>
         <constructor-arg name="age" value="18"/>
         <constructor-arg name="adds" value="艾欧尼亚"/>
     </bean>
-    <bean id="user2" class="com.ganga.pojo.User">
+    <bean id="user2" class="com.ganga.com.ganga.pojo.User">
         <constructor-arg name="username" value="永恩哥哥"/>
         <constructor-arg name="age" value="16"/>
         <constructor-arg name="adds" value="艾欧尼亚"/>
     </bean>
-    <bean id="user3" class="com.ganga.pojo.User">
+    <bean id="user3" class="com.ganga.com.ganga.pojo.User">
         <constructor-arg name="username" value="卡特妹妹"/>
         <constructor-arg name="age" value="9"/>
         <constructor-arg name="adds" value="诺克萨斯"/>
@@ -1802,7 +1802,7 @@ return "hello springMVC!!!";
 package com.ganga.controller.X3_SpringMVC数据响应.B回写数据;
 
 import com.alibaba.fastjson.JSON;
-import com.ganga.pojo.User;
+import com.ganga.com.ganga.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -1910,7 +1910,7 @@ public class WriterBackAttribute {
 ```java
 package com.ganga.controller.X3_SpringMVC数据响应.B回写数据;
 
-import com.ganga.pojo.User;
+import com.ganga.com.ganga.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -2018,7 +2018,7 @@ Controller中的业务方法的POJO参数的属性名与请求参数的name一�
 ```java
 package com.ganga.controller.X4_SpringMVC获取请求数据.BPOJO数据类型;
 
-import com.ganga.pojo.User;
+import com.ganga.com.ganga.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -2059,7 +2059,7 @@ Controller中的业务方法数组名称与请求参数的name一致，参数值
 ```java
 package com.ganga.controller.X4_SpringMVC获取请求数据.C数组数据类型;
 
-import com.ganga.pojo.User;
+import com.ganga.com.ganga.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
