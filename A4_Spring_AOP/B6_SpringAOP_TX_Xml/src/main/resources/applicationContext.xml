@@ -33,7 +33,7 @@
     </bean>
 
     <!-- service层 -->
-    <bean id="transferServlet" class="com.ganga.service.impl.TransferServiceImpl">
+    <bean id="transferServlet" class="com.ganga.service.impl.AccountServiceImpl">
         <property name="transferDao" ref="transferDao"/>
     </bean>
 

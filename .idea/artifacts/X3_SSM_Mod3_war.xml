@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="X3_SSM_Mod3:war">
+    <output-path>$PROJECT_DIR$/A6_SSM_框架整合/X3_SSM_Mod3/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>X3_SSM_Mod3</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="X3_SSM_Mod3-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="X3_SSM_Mod3:war exploded" />
+    </root>
+  </artifact>
+</component>

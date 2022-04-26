@@ -10,6 +10,9 @@
     <file type="web" url="file://$PROJECT_DIR$/A2_Spring_MVC/B8_SpringMVC_Exception" />
     <file type="web" url="file://$PROJECT_DIR$/A3_JdbcTemplate" />
     <file type="web" url="file://$PROJECT_DIR$/A6_SSM_Integration" />
+    <file type="web" url="file://$PROJECT_DIR$/A6_SSM_框架整合/X1_SSM_Mod1" />
+    <file type="web" url="file://$PROJECT_DIR$/A6_SSM_框架整合/X2_SSM_Mod2" />
+    <file type="web" url="file://$PROJECT_DIR$/A6_SSM_框架整合/X3_SSM_Mod3" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -39,6 +42,9 @@
         <option value="$PROJECT_DIR$/A4_Spring_AOP/B7_SpringAOP_TX_Anno/pom.xml" />
         <option value="$PROJECT_DIR$/A5_MyBatis/pom.xml" />
         <option value="$PROJECT_DIR$/A6_SSM_Integration/pom.xml" />
+        <option value="$PROJECT_DIR$/A6_SSM_框架整合/X1_SSM_Mod1/pom.xml" />
+        <option value="$PROJECT_DIR$/A6_SSM_框架整合/X2_SSM_Mod2/pom.xml" />
+        <option value="$PROJECT_DIR$/A6_SSM_框架整合/X3_SSM_Mod3/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

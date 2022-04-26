@@ -24,6 +24,7 @@
             <mvc:mapping path="/web/dame01/**"/>
             <bean class="com.ganga.interceptor.MyInterceptor01"/>
         </mvc:interceptor>
+
         <mvc:interceptor>
             <mvc:mapping path="/web/dame02/**"/>
             <bean class="com.ganga.interceptor.MyInterceptor02"/>

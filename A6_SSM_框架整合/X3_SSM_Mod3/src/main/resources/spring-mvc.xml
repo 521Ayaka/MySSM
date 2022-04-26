@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+               ">
+
+    <!-- 扫面组件 -->
+    <!-- 注解驱动 -->
+    <!-- 内部资源视图解析器 -->
+    <!-- 开放静态资源访问权限 -->
+    <!-- 配置自定义拦截器 -->
+    <!-- 配置文件上传解析器 -->
+
+
+    <!-- 扫面组件 -->
+    <context:component-scan base-package="com.ganga.controller"/>
+
+    <!-- 注解驱动 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- 内部资源视图解析器 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/"/><!-- 前缀 -->
+        <property name="suffix" value=".jsp"/><!-- 后缀 -->
+    </bean>
+
+
+    <!-- 开放静态资源访问权限 -->
+    <mvc:default-servlet-handler/>
+
+
+    <!-- 声明自定义日期转换器 -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <!-- 注入自定义时间日期转换类 -->
+                <bean class="com.ganga.util.DataConverter"></bean>
+            </list>
+        </property>
+    </bean>
+    <!-- [注意！！！]
+        <mvc:annotation-driven conversion-service="conversionService"/>
+        在mvc 注解驱动上 配置转换器
+    -->
+
+
+    <!-- 配置文件上传解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 上传文件总大小不超过40MB -->
+        <property name="maxUploadSize" value="40960000"/>
+        <!-- 上传单个问价大小不超过20MB -->
+        <property name="maxUploadSizePerFile" value="20480000"/>
+        <!-- 默认编码格式是utf-8 -->
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
+
+
+    <!-- 配置自定义拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/bean/*"/>
+            <bean class="com.ganga.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean class="com.ganga.exception.MyHandlerExceptionResolver"/>
+
+</beans>

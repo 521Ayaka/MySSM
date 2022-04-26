@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 引入properties文件 首位！！！ -->
+    <!-- 定义别名 -->
+    <!-- 配置数据库环境 -->
+    <!-- 配置映射器 -->
+
+
+    <!-- 定义别名 -->
+    <!--<typeAliases>
+        &lt;!&ndash; 方式一:单个类起别名 &ndash;&gt;
+        <typeAlias alias="user" type="com.ganga.pojo.User"></typeAlias>
+        &lt;!&ndash; 方式二:扫描改包下的所有类 然后将相应的首字母变小写 User -> user &ndash;&gt;
+        &lt;!&ndash;<package name="com.ganga.pojo.User"/>&ndash;&gt;
+    </typeAliases>-->
+
+
+</configuration>

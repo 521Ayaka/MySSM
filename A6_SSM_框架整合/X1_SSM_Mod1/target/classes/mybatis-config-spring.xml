@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 引入properties文件 首位！！！ -->
+    <!-- 定义别名 -->
+    <!-- 配置数据库环境 -->
+    <!-- 配置映射器 -->
+    <typeAliases>
+        <typeAlias alias="user" type="com.ganga.pojo.User"></typeAlias>
+    </typeAliases>
+
+
+</configuration>

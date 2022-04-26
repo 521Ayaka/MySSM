@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+               ">
+
+    <!-- 组件扫描 -->
+    <!-- 注解驱动 -->
+    <!-- 引入properties文件 -->
+    <!-- 配置数据源 -->
+    <!-- 配置声明式事务控制 -->
+    <!-- aop织入 -->
+
+    <!-- 组件扫描 -->
+    <context:component-scan base-package="com.ganga">
+        <!-- 排除的类型是注解！ 不是包 -->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 注解驱动 -->
+    <context:annotation-config></context:annotation-config>
+
+    <!-- 引入properties文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driverClass}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!-- 注册sqlSessionTemplate -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- 只能使用构造器注入sqLSessionFactory，因为它没有set方法 -->
+        <constructor-arg ref="sqlSessionFactory"/>
+    </bean>
+    <!--配置sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据源 -->
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 加载mybatis核心文件 -->
+        <property name="configLocation" value="classpath:mybatis-config-spring.xml"></property>
+        <!-- 加载mapper映射文件 -->
+        <property name="mapperLocations" value="classpath:com/ganga/mapper/*.xml"/>
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 配置声明式事务控制 基于注解方式-->
+    <!-- 事务对象 -->
+    <!--<bean id="transactionManager" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    &lt;!&ndash; 通知/增强 &ndash;&gt;
+    <tx:advice id="txAdvice">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+    &lt;!&ndash; 织入 &ndash;&gt;
+    <aop:config>
+        &lt;!&ndash; 切面 事务+通知 &ndash;&gt;
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ganga.service.impl..*.*(..))"/>
+    </aop:config>-->
+
+</beans>

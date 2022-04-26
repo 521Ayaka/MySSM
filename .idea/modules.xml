@@ -7,7 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/A3_JdbcTemplate/A3_JdbcTemplate.iml" filepath="$PROJECT_DIR$/A3_JdbcTemplate/A3_JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/A4_Spring_AOP.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/A4_Spring_AOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/A5_MyBatis/A5_MyBatis.iml" filepath="$PROJECT_DIR$/A5_MyBatis/A5_MyBatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/A6_SSM_Integration/A6_SSM_Integration.iml" filepath="$PROJECT_DIR$/A6_SSM_Integration/A6_SSM_Integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_整合/A6_SSM_整合.iml" filepath="$PROJECT_DIR$/A6_SSM_整合/A6_SSM_整合.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_框架整合/A6_SSM_框架整合.iml" filepath="$PROJECT_DIR$/A6_SSM_框架整合/A6_SSM_框架整合.iml" />
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/B1_JDK_DynamicProxy.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B1_JDK_DynamicProxy/B1_JDK_DynamicProxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" filepath="$PROJECT_DIR$/A1_Spring/B1_SpringStart/B1_SpringStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/B1_SpringWebBuild.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B1_SpringWebBuild/B1_SpringWebBuild.iml" />
@@ -28,6 +29,9 @@
       <module fileurl="file://$PROJECT_DIR$/A4_Spring_AOP/B7_SpringAOP_TX_Anno/B7_SpringAOP_TX_Anno.iml" filepath="$PROJECT_DIR$/A4_Spring_AOP/B7_SpringAOP_TX_Anno/B7_SpringAOP_TX_Anno.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" filepath="$PROJECT_DIR$/A2_Spring_MVC/B7_SpringMVC_Exception/B7_SpringMVC_Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/MySSM.iml" filepath="$PROJECT_DIR$/MySSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_框架整合/X1_SSM_Mod1/X1_SSM_Mod1.iml" filepath="$PROJECT_DIR$/A6_SSM_框架整合/X1_SSM_Mod1/X1_SSM_Mod1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_框架整合/X2_SSM_Mod2/X2_SSM_Mod2.iml" filepath="$PROJECT_DIR$/A6_SSM_框架整合/X2_SSM_Mod2/X2_SSM_Mod2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A6_SSM_框架整合/X3_SSM_Mod3/X3_SSM_Mod3.iml" filepath="$PROJECT_DIR$/A6_SSM_框架整合/X3_SSM_Mod3/X3_SSM_Mod3.iml" />
     </modules>
   </component>
 </project>
