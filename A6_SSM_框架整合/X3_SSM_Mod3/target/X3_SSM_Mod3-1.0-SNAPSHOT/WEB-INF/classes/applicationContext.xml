@@ -15,6 +15,13 @@
     <!-- 注解驱动 -->
     <!-- 引入properties文件 -->
     <!-- 配置数据源 -->
+
+    <!-- Spring整合MyBatis -->
+    <!-- 1.配置数据源 -->
+    <!-- 2.配置sqlSessionFactory -->
+    <!-- 3.1 方式二:配置MapperFactoryBean -->
+    <!-- 3.2 方式二:配置MapperScannerConfigurer -->
+
     <!-- 配置声明式事务控制 -->
     <!-- aop织入 -->
 
@@ -48,33 +55,29 @@
         <property name="mapperLocations" value="classpath:com/ganga/mapper/*.xml"/>
     </bean>
 
-    <!-- 配置MapperFactoryBean 代理对象 -->
-    <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        &lt;!&ndash; 注入代理接口 &ndash;&gt;
+
+    <!-- 配置方式一: 配置MapperFactoryBean 代理对象 -->
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <!-- 注入代理接口 -->
         <property name="mapperInterface" value="com.ganga.mapper.UserMapper" />
-        &lt;!&ndash; 注入工厂对象 &ndash;&gt;
+        <!-- 注入工厂对象 -->
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    <!--<bean id="accountMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.ganga.mapper.AccountMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>-->
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!-- 配置方式二: 配置MapperScannerConfigurer 简化MapperFactoryBean -->
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.ganga.mapper"/>
-    </bean>
+    </bean>-->
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    <!-- 配置声明式事务控制 基于注解方式-->
+    <!-- 配置声明式事务控制 基于xml方式-->
     <!-- 事务对象 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
@@ -88,7 +91,7 @@
 
     <!-- 织入 -->
     <aop:config>
-        <!-- 切面 事务+通知 -->
+        <!-- 切面 业务逻辑+事务控制 -->
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ganga.service.impl..*.*(..))"/>
     </aop:config>
 

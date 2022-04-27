@@ -956,11 +956,11 @@ IAccountService as = ac.getBean("accountService",IAccountService.class);
 
 #### Spring集成Junit步骤
 
-	1. **导入spring集成Junit的坐标**
-	1. **使用@Runwith注解替换原来的运行期**
-	1. **使用@ContextConfiguration指定配置文件或配置类**
-	1. **使用@Autowired注入需要测试的对象**
-	1. **创建测试方法进行测试**
+1. **导入spring集成Junit的坐标**
+1. **使用@Runwith注解替换原来的运行期**
+1. **使用@ContextConfiguration指定配置文件或配置类**
+1. **使用@Autowired注入需要测试的对象**
+1. **创建测试方法进行测试**
 
 
 
@@ -1113,7 +1113,7 @@ public class SpringJunitRunTest {
 ```java
 //使用Spring-web 提供的工具了
 ApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(servletContext);
-
+//要有servletContxt域对象
 ```
 
 
@@ -1136,7 +1136,7 @@ ApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(ser
 
 ## SpringMVC框架
 
-<font color="red">****</font>
+
 
 
 
@@ -7327,6 +7327,13 @@ jdbc.password=ganga
     <!-- 注解驱动 -->
     <!-- 引入properties文件 -->
     <!-- 配置数据源 -->
+    
+    <!-- Spring整合MyBatis -->
+    <!-- 1.配置数据源 -->
+    <!-- 2.配置sqlSessionFactory -->
+    <!-- 3.1 方式二:配置MapperFactoryBean -->
+    <!-- 3.2 方式二:配置MapperScannerConfigurer -->
+    
     <!-- 配置声明式事务控制 -->
     <!-- aop织入 -->
 
@@ -7342,15 +7349,21 @@ jdbc.password=ganga
     <!-- 引入properties文件 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
-    <!-- 配置数据源 -->
+    
+
+    
+    <!-- Spring整合MyBatis -->
+    
+    <!-- 1. 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driverClass}"/>
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.user}"/>
         <property name="password" value="${jdbc.password}"/>
     </bean>
-
-    <!--配置sqlSessionFactory-->
+    
+    
+    <!-- 2. 配置sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 注入数据源 -->
         <property name="dataSource" ref="dataSource"></property>
@@ -7360,20 +7373,31 @@ jdbc.password=ganga
         <property name="mapperLocations" value="classpath:com/ganga/mapper/*.xml"/>
     </bean>
 
-    <!-- 配置方式一: 配置MapperFactoryBean 代理对象 -->
+    
+    <!-- 3.1. 配置方式一: 配置MapperFactoryBean 代理对象 -->
+    <!-- userMapper代理对象 -->
     <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <!-- 注入代理接口 -->
         <property name="mapperInterface" value="com.ganga.mapper.UserMapper" />
         <!-- 注入工厂对象 -->
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
+    <!-- accountMapper代理对象 -->
+    <bean id="accountMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.ganga.mapper.AccountMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
     
-    <!-- 配置方式二: 配置MapperScannerConfigurer 简化MapperFactoryBean -->
+    
+    <!-- 3.2. 配置方式二: 配置MapperScannerConfigurer 简化MapperFactoryBean -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.ganga.mapper"/>
     </bean>
 
 
+    
+    
+    
 
 
     <!-- 配置声明式事务控制 基于xml方式-->
@@ -7738,6 +7762,14 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
     }
 }
 ```
+
+
+
+
+
+
+
+
 
 
 

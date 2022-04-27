@@ -21,7 +21,7 @@ public class AccountServiceImpl implements AccountService {
     public void transfer(String outMan, String inMan, double money) {
         accountMapper.out(outMan,money);
         System.out.println("======");
-        int i = 1/0;
+        //int i = 1/0; //模拟异常
         accountMapper.in(inMan,money);
     }
 }
